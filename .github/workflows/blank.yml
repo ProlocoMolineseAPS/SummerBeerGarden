@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ristorante Bella Vita</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #fff8f0;
+      color: #333;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    header {
+      background-color: #a83232;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header img {
+      max-width: 120px;
+      height: auto;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    #customization {
+      text-align: center;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    #customization label {
+      margin-right: 10px;
+    }
+
+    #countdown-section {
+      text-align: center;
+      background-color: #fbe9e7;
+      padding: 20px;
+      font-size: 1.2em;
+    }
+
+    #countdown {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #a83232;
+      margin-top: 10px;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      border-bottom: 2px solid #a83232;
+      padding-bottom: 5px;
+    }
+
+    .menu-section {
+      margin-bottom: 30px;
+    }
+
+    .menu-item {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background-color: #eee;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+    }
+
+    .social a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #a83232;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="Logo Ristorante">
+    <h1>Ristorante Bella Vita</h1>
+    <p>Tradizione e gusto italiano</p>
+  </header>
+
+  <!-- Personalizzazione -->
+  <section id="customization">
+    <h3>Personalizza la tua esperienza</h3>
+    <form id="customization-form">
+      <label for="bg-color">Colore di sfondo:</label>
+      <input type="color" id="bg-color" value="#fff8f0">
+      <br><br>
+      <label for="bg-image">URL immagine di sfondo:</label>
+      <input type="url" id="bg-image" placeholder="https://...">
+      <br><br>
+      <label for="text-color">Colore del testo:</label>
+      <input type="color" id="text-color" value="#333333">
+      <br><br>
+      <button type="submit">Applica modifiche</button>
+    </form>
+  </section>
+
+  <!-- Countdown -->
+  <section id="countdown-section">
+    <h2>Prossimo Evento Speciale</h2>
+    <p>Serata a tema "Sapori di Sicilia" inizia tra:</p>
+    <div id="countdown">Caricamento...</div>
+  </section>
+
+  <!-- Menu -->
+  <main>
+    <section class="menu-section">
+      <h2>Antipasti</h2>
+      <div class="menu-item">Bruschette miste - €6</div>
+      <div class="menu-item">Tagliere di salumi - €10</div>
+    </section>
+
+    <section class="menu-section">
+      <h2>Primi Piatti</h2>
+      <div class="menu-item">Lasagna alla bolognese - €12</div>
+      <div class="menu-item">Spaghetti alle vongole - €14</div>
+    </section>
+
+    <section class="menu-section">
+      <h2>Secondi Piatti</h2>
+      <div class="menu-item">Bistecca alla fiorentina - €22</div>
+      <div class="menu-item">Pesce spada alla griglia - €18</div>
+    </section>
+
+    <section class="menu-section">
+      <h2>Dolci</h2>
+      <div class="menu-item">Tiramisù - €5</div>
+      <div class="menu-item">Panna cotta - €5</div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Contatti: +39 345 678 9012 | info@bellavita.it</p>
+    <div class="social">
+      <a href="https://www.facebook.com/tuoprofileristorante" target="_blank">Facebook</a> |
+      <a href="https://www.instagram.com/tuoprofileristorante" target="_blank">Instagram</a>
+    </div>
+  </footer>
+
+  <!-- Script per countdown e personalizzazione -->
+  <script>
+    // Countdown
+    const eventDate = new Date("June 15, 2025 20:00:00").getTime();
+    const countdownEl = document.getElementById("countdown");
+
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      if (distance < 0) {
+        clearInterval(interval);
+        countdownEl.innerHTML = "L'evento è in corso!";
+        return;
+      }
+
+      const giorni = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const ore = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minuti = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const secondi = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.innerHTML = `${giorni}g ${ore}h ${minuti}m ${secondi}s`;
+    }, 1000);
+
+    // Personalizzazione sfondo e colore testo
+    document.getElementById('customization-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const bgColor = document.getElementById('bg-color').value;
+      const bgImage = document.getElementById('bg-image').value;
+      const textColor = document.getElementById('text-color').value;
+
+      document.body.style.backgroundColor = bgColor;
+      document.body.style.color = textColor;
+
+      if (bgImage) {
+        document.body.style.backgroundImage = `url('${bgImage}')`;
+        document.body.style.backgroundSize = 'cover';
+        document.body.style.backgroundRepeat = 'no-repeat';
+        document.body.style.backgroundPosition = 'center';
+      } else {
+        document.body.style.backgroundImage = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
