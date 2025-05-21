@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ristorante Bella Vita</title>
+  <title>Summer Beer Garden</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -89,8 +89,8 @@
 
   <header>
     <img src="logo.png" alt="Logo Ristorante">
-    <h1>Ristorante Bella Vita</h1>
-    <p>Tradizione e gusto italiano</p>
+    <h1>Proloco Molinese APS</h1>
+    <p>Summer Beer Garden 4 luglio</p>
   </header>
 
   <!-- Personalizzazione -->
@@ -112,8 +112,8 @@
 
   <!-- Countdown -->
   <section id="countdown-section">
-    <h2>Prossimo Evento Speciale</h2>
-    <p>Serata a tema "Sapori di Sicilia" inizia tra:</p>
+    <h2>Prossimo evento</h2>
+    <p>vi aspettiamo tra:</p>
     <div id="countdown">Caricamento...</div>
   </section>
 
@@ -149,14 +149,14 @@
     <p>Contatti: +39 345 678 9012 | info@bellavita.it</p>
     <div class="social">
       <a href="https://www.facebook.com/tuoprofileristorante" target="_blank">Facebook</a> |
-      <a href="https://www.instagram.com/tuoprofileristorante" target="_blank">Instagram</a>
+      <a href="https://www.instagram.com/pro_locomolineseaps?igsh=YnRkeXZsYzE4bnhz " target="_blank">Instagram</a>
     </div>
   </footer>
 
   <!-- Script per countdown e personalizzazione -->
   <script>
     // Countdown
-    const eventDate = new Date("June 15, 2025 20:00:00").getTime();
+    const eventDate = new Date("July 04, 2025 20:00:00").getTime();
     const countdownEl = document.getElementById("countdown");
 
     const interval = setInterval(() => {
@@ -165,7 +165,7 @@
 
       if (distance < 0) {
         clearInterval(interval);
-        countdownEl.innerHTML = "L'evento è in corso!";
+        countdownEl.innerHTML = "Stiamo già spillando!";
         return;
       }
 
