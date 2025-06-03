@@ -8,15 +8,15 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #000;
-      color: #FFD700;
+      background-color: #000000;
+      color: #ffff00;
     }
 
     header {
-      background-color: #a83232;
+      background-color: #c99402;
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 0;
     }
 
     header img {
@@ -25,19 +25,23 @@
       display: block;
     }
 
-    /* Countdown mantiene i colori originali */
+    header h1 {
+      font-family: 'Georgia', serif;
+      font-style: italic;
+      margin: 10px 0 0 0;
+    }
+
     #countdown-section {
       text-align: center;
-      background-color: #fbe9e7;
-      color: #333;
+      background-color: #fff200;
       padding: 20px;
       font-size: 1.2em;
+      color: #000000;
     }
 
     #countdown {
       font-size: 1.5em;
       font-weight: bold;
-      color: #a83232;
       margin-top: 10px;
     }
 
@@ -48,7 +52,7 @@
     }
 
     h2 {
-      border-bottom: 2px solid #000;
+      border-bottom: 2px solid #a83232;
       padding-bottom: 5px;
     }
 
@@ -61,22 +65,17 @@
     }
 
     footer {
-      background-color: #000;
+      background-color: #000000;
       text-align: center;
       padding: 15px;
       font-size: 0.9em;
-      color: #a83232;
+      color: #ffff00;
     }
 
     .social a {
       margin: 0 10px;
       text-decoration: none;
-      color: #87CEEB;
-    }
-
-    /* Nascondiamo il form di personalizzazione */
-    #customization {
-      display: none;
+      color: #00d9ff;
     }
   </style>
 </head>
@@ -85,13 +84,8 @@
   <header>
     <img src="Molinese_logo_bnw.png" alt="Logo Ristorante">
     <h1>Proloco Molinese APS</h1>
-    <p>Summer Beer Garden 4 luglio</p>
+    <p>Summer Beer Garden - 4 luglio</p>
   </header>
-
-  <!-- Sezione Personalizzazione disattivata -->
-  <section id="customization">
-    <!-- Form rimosso -->
-  </section>
 
   <!-- Countdown -->
   <section id="countdown-section">
@@ -104,39 +98,38 @@
   <main>
     <section class="menu-section">
       <h2>Antipasti</h2>
-      <div class="menu-item">Bruschette miste - €6</div>
-      <div class="menu-item">Tagliere di salumi - €10</div>
+      <div class="menu-item">Bruschette al pomodoro - €x</div>
+      <div class="menu-item">Tagliere - €x</div>
     </section>
 
     <section class="menu-section">
       <h2>Primi Piatti</h2>
-      <div class="menu-item">Lasagna alla bolognese - €12</div>
-      <div class="menu-item">Spaghetti alle vongole - €14</div>
+      <div class="menu-item">Spätzle allo speck - €x</div>
     </section>
 
     <section class="menu-section">
-      <h2>Secondi Piatti</h2>
-      <div class="menu-item">Bistecca alla fiorentina - €22</div>
-      <div class="menu-item">Pesce spada alla griglia - €18</div>
+      <h2>Griglia</h2>
+      <div class="menu-item">Grigliata mista - €x</div>
+      <div class="menu-item">Hot dog - €x</div>
     </section>
 
     <section class="menu-section">
       <h2>Dolci</h2>
-      <div class="menu-item">Tiramisù - €5</div>
-      <div class="menu-item">Panna cotta - €5</div>
+      <div class="menu-item">Crostata - €x</div>
+      <div class="menu-item">Boh - €x</div>
     </section>
   </main>
 
   <!-- Footer -->
   <footer>
-    <p>Contatti: +39 345 678 9012 | info@bellavita.it</p>
+    <p>Contatti: +39 xxxxxx | sito</p>
     <div class="social">
-      <a href="https://www.facebook.com/tuoprofileristorante" target="_blank">Facebook</a> |
+      <a href="https://www.facebook.com/prolocomolineseaps/" target="_blank">Facebook</a> |
       <a href="https://www.instagram.com/pro_locomolineseaps?igsh=YnRkeXZsYzE4bnhz" target="_blank">Instagram</a>
     </div>
   </footer>
 
-  <!-- Script Countdown -->
+  <!-- Script per countdown -->
   <script>
     const eventDate = new Date("July 04, 2025 20:00:00").getTime();
     const countdownEl = document.getElementById("countdown");
@@ -159,7 +152,5 @@
       countdownEl.innerHTML = `${giorni}g ${ore}h ${minuti}m ${secondi}s`;
     }, 1000);
   </script>
-
-
 </body>
 </html>
