@@ -8,12 +8,15 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #000000;
-      color: #FFD700; /* Giallo */
+      background-color: #000;
+      color: #FFD700;
     }
 
     header {
+      background-color: #a83232;
+      color: white;
       text-align: center;
+      padding: 20px;
     }
 
     header img {
@@ -22,5 +25,143 @@
       display: block;
     }
 
+    /* Countdown mantiene i colori originali */
     #countdown-section {
-      text
+      text-align: center;
+      background-color: #fbe9e7;
+      color: #333;
+      padding: 20px;
+      font-size: 1.2em;
+    }
+
+    #countdown {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #a83232;
+      margin-top: 10px;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      border-bottom: 2px solid #a83232;
+      padding-bottom: 5px;
+    }
+
+    .menu-section {
+      margin-bottom: 30px;
+    }
+
+    .menu-item {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+      color: #FFD700;
+    }
+
+    .social a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #FFD700;
+    }
+
+    /* Nascondiamo il form di personalizzazione */
+    #customization {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="Logo Ristorante">
+    <h1>Proloco Molinese APS</h1>
+    <p>Summer Beer Garden 4 luglio</p>
+  </header>
+
+  <!-- Sezione Personalizzazione disattivata -->
+  <section id="customization">
+    <!-- Form rimosso -->
+  </section>
+
+  <!-- Countdown -->
+  <section id="countdown-section">
+    <h2>Prossimo evento</h2>
+    <p>vi aspettiamo tra:</p>
+    <div id="countdown">Caricamento...</div>
+  </section>
+
+  <!-- Menu -->
+  <main>
+    <section class="menu-section">
+      <h2>Antipasti</h2>
+      <div class="menu-item">Bruschette miste - €6</div>
+      <div class="menu-item">Tagliere di salumi - €10</div>
+    </section>
+
+    <section class="menu-section">
+      <h2>Primi Piatti</h2>
+      <div class="menu-item">Lasagna alla bolognese - €12</div>
+      <div class="menu-item">Spaghetti alle vongole - €14</div>
+    </section>
+
+    <section class="menu-section">
+      <h2>Secondi Piatti</h2>
+      <div class="menu-item">Bistecca alla fiorentina - €22</div>
+      <div class="menu-item">Pesce spada alla griglia - €18</div>
+    </section>
+
+    <section class="menu-section">
+      <h2>Dolci</h2>
+      <div class="menu-item">Tiramisù - €5</div>
+      <div class="menu-item">Panna cotta - €5</div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Contatti: +39 345 678 9012 | info@bellavita.it</p>
+    <div class="social">
+      <a href="https://www.facebook.com/tuoprofileristorante" target="_blank">Facebook</a> |
+      <a href="https://www.instagram.com/pro_locomolineseaps?igsh=YnRkeXZsYzE4bnhz" target="_blank">Instagram</a>
+    </div>
+  </footer>
+
+  <!-- Script Countdown -->
+  <script>
+    const eventDate = new Date("July 04, 2025 20:00:00").getTime();
+    const countdownEl = document.getElementById("countdown");
+
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      if (distance < 0) {
+        clearInterval(interval);
+        countdownEl.innerHTML = "Stiamo già spillando!";
+        return;
+      }
+
+      const giorni = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const ore = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minuti = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const secondi = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.innerHTML = `${giorni}g ${ore}h ${minuti}m ${secondi}s`;
+    }, 1000);
+  </script>
+
+    }
+
+
+</body>
+</html>
