@@ -13,7 +13,7 @@
     }
 
     header {
-      background-color: #c99402;
+      background-color: #000000;
       color: white;
       text-align: center;
       padding: 0;
@@ -31,18 +31,9 @@
       margin: 10px 0 0 0;
     }
 
-    #countdown-section {
-      text-align: center;
-      background-color: #fff200;
-      padding: 20px;
-      font-size: 1.2em;
-      color: #000000;
-    }
-
-    #countdown {
-      font-size: 1.5em;
-      font-weight: bold;
-      margin-top: 10px;
+    header p a {
+      color: #ffff00;
+      text-decoration: underline;
     }
 
     .beer-photo-section {
@@ -71,6 +62,7 @@
     h2 {
       border-bottom: 2px solid #a83232;
       padding-bottom: 5px;
+      color: white;
     }
 
     .menu-section {
@@ -79,6 +71,8 @@
 
     .menu-item {
       margin-bottom: 10px;
+      font-size: 1.1em;
+      color: white;
     }
 
     footer {
@@ -94,27 +88,36 @@
       text-decoration: none;
       color: #00d9ff;
     }
+
+    .live-section {
+      background-color: #000000;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .live-section h2 {
+      color: #ffff00;
+    }
+
+    .live-section a {
+      color: #00d9ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="Molinese_logo_bnw.png" alt="Logo Ristorante">
-    <h1>Summer Beer Garden 4 luglio h 19.00 </h1>
-    <p>Piazza caduti per la Patria</p>
+    <img src="nuova_copertina.jpg" alt="Copertina Summer Beer Garden">
+    <h1>Summer Beer Garden 4 luglio h 19.00</h1>
+    <p><a href="https://www.google.com/maps/place/Piazza+Caduti+per+la+Patria" target="_blank">Piazza Caduti per la Patria</a></p>
   </header>
-
-  <!-- Countdown -->
-  <section id="countdown-section">
-    <h2>Prossimo evento</h2>
-    <p>Vi aspettiamo tra:</p>
-    <div id="countdown">Caricamento...</div>
-  </section>
 
   <!-- Foto birre -->
   <section class="beer-photo-section">
     <h2>Birre bionde e rosse</h2>
-   <!--<img src="foto_birre.jpg" alt="Birre bionde e rosse"> -->
+    <img src="foto_birre.jpg" alt="Birre bionde e rosse">
   </section>
 
   <!-- Menu -->
@@ -122,43 +125,50 @@
     <section class="menu-section">
       <h2>Antipasti</h2>
       <div class="menu-item">Bruschette al pomodoro - €x</div>
-      <div class="menu-item">Tagliere - €x</div>
+      <div class="menu-item">Tagliere - 7,00 €</div>
     </section>
 
     <section class="menu-section">
       <h2>Primi Piatti</h2>
-      <div class="menu-item">Spätzle allo speck - €x</div>
+      <div class="menu-item">Spätzle allo speck - 9,00 €</div>
     </section>
 
     <section class="menu-section">
       <h2>Griglia</h2>
-      <div class="menu-item">Grigliata mista - €x</div>
+      <div class="menu-item">Grigliata mista - 12,00 €</div>
       <div class="menu-item">Hot dog - €x</div>
+      <div class="menu-item">Patatine fritte - 3,50 €</div>
     </section>
 
     <section class="menu-section">
       <h2>Dolci</h2>
-      <div class="menu-item">Crostata - €x</div>
+      <div class="menu-item">Crostata - 3,00 €</div>
       <div class="menu-item">Boh - €x</div>
     </section>
 
-    <!-- Nuova sezione: Da bere -->
+    <!-- Sezione: Da bere -->
     <section class="menu-section">
       <h2>Da bere</h2>
-      <div class="menu-item">Acqua - €x</div>
-      <div class="menu-item">Lattine - €x</div>
-      <div class="menu-item">Birra bionda - €x</div>
-      <div class="menu-item">Birra rossa - €x</div>
-      <div class="menu-item">Bicchiere di vino - €x</div>
-      <div class="menu-item">Spritz - €x</div>
-      <div class="menu-item">Caffè - €x</div>
-      <div class="menu-item">Amari - €x</div>
+      <div class="menu-item">Acqua - 1,00 €</div>
+      <div class="menu-item">Lattine - 2,50 €</div>
+      <div class="menu-item">Birra bionda - 5,00 €</div>
+      <div class="menu-item">Birra rossa - 5,00 €</div>
+      <div class="menu-item">Bicchiere di vino - 3,00 €</div>
+      <div class="menu-item">Spritz - 5,00 €</div>
+      <div class="menu-item">Caffè - 1,00 €</div>
+      <div class="menu-item">Amari - 3,00 €</div>
     </section>
   </main>
 
+  <!-- Sezione artista live -->
+  <section class="live-section">
+    <h2>Live: Marco Bluesman alle 21:00</h2>
+    <p>Segui <a href="https://www.instagram.com/marcobluesman" target="_blank">@marcobluesman</a> su Instagram</p>
+  </section>
+
   <!-- Footer -->
   <footer>
-    <p>Contatti: +39 xxxxxx | sito</p>
+    <p>Contatti: <a href="tel:3394260815">3394260815 Elisabetta</a> | <a href="tel:3383622214">3383622214 Cristiano</a></p>
     <div class="social">
       <a href="https://www.facebook.com/prolocomolineseaps/" target="_blank">Facebook</a> |
       <a href="https://www.instagram.com/pro_locomolineseaps?igsh=YnRkeXZsYzE4bnhz" target="_blank">Instagram</a>
